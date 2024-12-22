@@ -113,7 +113,7 @@ else
     CUDA_LIBS="-L/usr/local/cuda/lib64 -lcuda -lcudart "
     NVCC="nvcc"
 fi
-NVCCFLAGS="-arch=sm_13 -use_fast_math  -Xptxas -v -Xcompiler -fopenmp "
+NVCCFLAGS="-arch=sm_86 -use_fast_math  -Xptxas -v -Xcompiler -fopenmp "
 AC_SUBST(CUDA_CFLAGS)
 AC_SUBST(CUDA_LIBS)
 AC_SUBST(NVCC)

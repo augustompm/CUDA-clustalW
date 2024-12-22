@@ -1,5 +1,6 @@
 #!/bin/sh
-function MakeCPU(){
+
+MakeCPU() {
     echo ""
     echo ""
     echo ""
@@ -12,8 +13,7 @@ function MakeCPU(){
     cd ../../
 }
 
-
-function MakeGPU(){
+MakeGPU() {
     echo ""
     echo ""
     echo ""
@@ -26,7 +26,7 @@ function MakeGPU(){
     cd ../../
 }
 
-function MakeClean(){
+MakeClean() {
     cd ./CPU/clustalw-2.0.11
     make clean
     cd ../../
@@ -36,16 +36,15 @@ function MakeClean(){
     cd ../../
 }
 
-if [ $# == 0 ]; then
-    MakeCPU;
-    MakeGPU;
+if [ $# -eq 0 ]; then
+    MakeCPU
+    MakeGPU
 else 
-    if [ "$1" == "clean" ]; then
-        MakeClean;
-    elif [ "$1" == "GPU" ]; then
-        MakeGPU;
-    elif [ "$1" == "CPU" ]; then
-        MakeCPU;
+    if [ "$1" = "clean" ]; then
+        MakeClean
+    elif [ "$1" = "GPU" ]; then
+        MakeGPU
+    elif [ "$1" = "CPU" ]; then
+        MakeCPU
     fi
 fi
-
